@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>T-Shirt Store</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/bootstrap.min.css") %>">
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+
+    <header class="site-header">
+      <a href="#" class="logo">T-Shirt Store</a>
+      <ul class="nav nav-pills">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </header>
+    <!-- /site-header -->
+
+    <div class="container" role="main">
+      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+      <%= @inner %>
+
+    </div>
+    <!-- /container -->
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Copyright &copy; <%= Ecto.DateTime.local.year %> T-Shirt Store co.</p>
+      </div>
+    </footer>
+    <!-- /site-footer -->
+
+    <!-- scripts -->
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+
+  </body>
+</html>
