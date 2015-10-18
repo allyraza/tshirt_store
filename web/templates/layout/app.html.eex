@@ -8,19 +8,21 @@
     <meta name="author" content="">
 
     <title>T-Shirt Store</title>
+
+    <!-- styles -->
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic,700italic|Bitter:400italic,400,700"> -->
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/bootstrap.min.css") %>">
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
   </head>
-
   <body>
 
     <header class="site-header">
-      <a href="#" class="logo">T-Shirt Store</a>
-      <ul class="nav nav-pills">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Shop</a></li>
-        <li><a href="#">Blog</a></li>
-      </ul>
+        <a href="#" class="logo">T-Shirt Store</a>
+        <ul class="nav nav-pills">
+            <li><a href="<%= page_path(@conn, :index) %>">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
     </header>
     <!-- /site-header -->
 
@@ -34,9 +36,9 @@
     <!-- /container -->
 
     <footer class="site-footer">
-      <div class="container">
-        <p>Copyright &copy; <%= Ecto.DateTime.local.year %> T-Shirt Store co.</p>
-      </div>
+        <div class="container">
+            <p>Copyright &copy; <%= Ecto.DateTime.local.year %> T-Shirt Store co.</p>
+        </div>
     </footer>
     <!-- /site-footer -->
 

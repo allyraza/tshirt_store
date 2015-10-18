@@ -1,0 +1,161 @@
+@mixin heading2() {
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 40px 0;
+    color: #d9d1c9;
+    text-align: center;
+}
+
+@mixin heading4() {
+    font-family: "Archivo Narrow", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #ca5c43;
+    margin: 0 0 10px 0;
+}
+
+body {
+    font-family: "Georgia", serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #666;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Space out content a bit */
+body, form, ul, table {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Phoenix flash messages */
+.alert:empty { display: none; }
+
+/* Phoenix inline forms in links and buttons */
+form.link, form.button {
+    display: inline;
+}
+
+/* Custom page header */
+.site-header {
+    border-bottom: 1px solid #e5e5e5;
+
+    .logo {
+        display: block;
+        font-size: 36px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: center;
+        color: #5A3118;
+    }
+
+    ul {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+    }
+
+    li {
+        float: none;
+        display: inline-block;
+    }
+
+    li a {
+        color: #5a3214;
+    }
+
+}
+
+.product-list {
+
+    &-h {
+        font-size: 17px;
+        @include heading2;
+    }
+
+    .product {
+        text-align: center;
+    }
+
+    .product-media {
+        margin-bottom: 20px;
+    }
+
+    .product-image {
+        width: 100%;
+    }
+
+    .product-name {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 0 0 12px 0;
+    }
+
+    .product-category {
+        @include heading4;
+    }
+
+    .product-price {
+        font-size: 18px;
+    }
+
+}
+
+.site-footer {
+    text-align: left;
+    margin: 20px;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.site-header,
+.marketing {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Customize container */
+@media (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 35px 0;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    
+    /* Remove the padding we set earlier */
+    .marketing {}
+
+    /* Space out the masthead */
+    .site-header {
+        margin-bottom: 30px;
+    }
+    
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+
+}
