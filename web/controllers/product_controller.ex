@@ -2,6 +2,7 @@ defmodule TshirtStore.ProductController do
   use TshirtStore.Web, :controller
 
   alias TshirtStore.Product
+  alias TshirtStore.Category
 
   plug :scrub_params, "product" when action in [:create, :update]
 
@@ -29,14 +30,15 @@ defmodule TshirtStore.ProductController do
   end
 
   def show(conn, %{"id" => id}) do
-    product = Repo.get!(Product, id)
+    product = Product |> Repo.get!(id) |> Repo.preload(:category)
     render(conn, "show.html", product: product)
   end
 
   def edit(conn, %{"id" => id}) do
     product = Repo.get!(Product, id)
     changeset = Product.changeset(product)
-    render(conn, "edit.html", product: product, changeset: changeset)
+    category_select = Repo.all from u in Category, select: {u.name, u.id}
+    render(conn, "edit.html", product: product, changeset: changeset, category_select: category_select)
   end
 
   def update(conn, %{"id" => id, "product" => product_params}) do

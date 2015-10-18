@@ -19,6 +19,7 @@ defmodule TshirtStore.Router do
     get "/", PageController, :index
     
     resources "/products", ProductController
+    resources "/categories", CategoryController
   end
 
   # Other scopes may use custom stacks.

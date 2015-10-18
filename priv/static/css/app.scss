@@ -33,6 +33,10 @@ body, form, ul, table {
     margin-bottom: 20px;
 }
 
+.headline {
+    @include heading2;
+}
+
 /* Phoenix flash messages */
 .alert:empty { display: none; }
 
@@ -77,13 +81,17 @@ form.link, form.button {
         font-size: 17px;
         @include heading2;
     }
+}
 
-    .product {
-        text-align: center;
-    }
+.product {
 
     .product-media {
         margin-bottom: 20px;
+    }
+
+    .product-media--half {
+        border: 1px solid #ccc;
+        padding: 5px;
     }
 
     .product-image {
@@ -100,10 +108,20 @@ form.link, form.button {
         @include heading4;
     }
 
-    .product-price {
-        font-size: 18px;
+    .product-sku {
+        font-size: 14px;
+        font-style: italic;
+        color: #aaa;
     }
 
+    .product-price {
+        font-size: 24px;
+        display: block;
+    }
+
+    .product-attributes {
+        text-align: left;
+    }
 }
 
 .site-footer {

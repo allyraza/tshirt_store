@@ -10,6 +10,16 @@ body, form, ul, table {
   margin-top: 20px;
   margin-bottom: 20px; }
 
+.headline {
+  font-family: "Archivo Narrow", sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 40px 0;
+  color: #d9d1c9;
+  text-align: center; }
+
 /* Phoenix flash messages */
 .alert:empty {
   display: none; }
@@ -48,17 +58,19 @@ form.link, form.button {
   margin: 0 0 40px 0;
   color: #d9d1c9;
   text-align: center; }
-.product-list .product {
-  text-align: center; }
-.product-list .product-media {
+
+.product .product-media {
   margin-bottom: 20px; }
-.product-list .product-image {
+.product .product-media--half {
+  border: 1px solid #ccc;
+  padding: 5px; }
+.product .product-image {
   width: 100%; }
-.product-list .product-name {
+.product .product-name {
   font-weight: bold;
   font-size: 16px;
   margin: 0 0 12px 0; }
-.product-list .product-category {
+.product .product-category {
   font-family: "Archivo Narrow", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -66,8 +78,15 @@ form.link, form.button {
   text-transform: uppercase;
   color: #ca5c43;
   margin: 0 0 10px 0; }
-.product-list .product-price {
-  font-size: 18px; }
+.product .product-sku {
+  font-size: 14px;
+  font-style: italic;
+  color: #aaa; }
+.product .product-price {
+  font-size: 24px;
+  display: block; }
+.product .product-attributes {
+  text-align: left; }
 
 .site-footer {
   text-align: left;

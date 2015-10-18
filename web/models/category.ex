@@ -1,20 +1,17 @@
-defmodule TshirtStore.Product do
+defmodule TshirtStore.Category do
   use TshirtStore.Web, :model
 
-  schema "products" do
-    field :sku, :string
+  schema "categories" do
     field :name, :string
     field :slug, :string
     field :description, :string
     field :image, :string
-    field :price, :decimal
     field :status, :boolean, default: false
-    belongs_to :category, TshirtStore.Category
-
+    has_many :products, TshirtStore.Product
     timestamps
   end
 
-  @required_fields ~w(category_id sku name slug description image price status)
+  @required_fields ~w(name slug)
   @optional_fields ~w()
 
   @doc """
@@ -27,5 +24,4 @@ defmodule TshirtStore.Product do
     model
     |> cast(params, @required_fields, @optional_fields)
   end
-
 end

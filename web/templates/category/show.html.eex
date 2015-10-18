@@ -1,0 +1,33 @@
+<h2>Show category</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </li>
+
+  <li>
+    <strong>Slug:</strong>
+    <%= @category.slug %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @category.description %>
+  </li>
+
+  <li>
+    <strong>Image:</strong>
+    <%= @category.image %>
+  </li>
+
+  <li>
+    <strong>Status:</strong>
+    <%= @category.status %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: category_path(@conn, :edit, @category) %>
+<%= link "Back", to: category_path(@conn, :index) %>

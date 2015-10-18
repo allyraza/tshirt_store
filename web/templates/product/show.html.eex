@@ -1,48 +1,28 @@
-<h2>Show product</h2>
+<div class="product">
+    <div class="row">
+        <div class="product-media col-md-8">
+            <%= tag :image, src: @product.image, class: "product-image" %>
+        </div>
+        <!-- /product-media -->
 
-<ul>
+        <div class="product-info col-md-4">
+            <small class="product-category"><%= @product.category.name %></small>
+            <h3 class="product-name" ><%= @product.name %></h3>
+            <span class="product-sku">Sku: <%= @product.sku %></span>
 
-  <li>
-    <strong>Category:</strong>
-    <%= @product.category_id %>
-  </li>
+            <span class="product-price"><%= @product.price |> price %></span>
 
-  <li>
-    <strong>Sku:</strong>
-    <%= @product.sku %>
-  </li>
+            <div class="product-action">
+                <a href="/cart/put" data-method="PUT" data-id="<%= @product.id %>" class="btn btn-primary">Add to cart</a>
+            </div>
+        </div>
+    </div>
+    <!-- /row -->
 
-  <li>
-    <strong>Name:</strong>
-    <%= @product.name %>
-  </li>
+    <div class="product-description">
+        <!-- <strong>Description:</strong> -->
+        <%= @product.description %>
+    </div>
 
-  <li>
-    <strong>Slug:</strong>
-    <%= @product.slug %>
-  </li>
-
-  <li>
-    <strong>Description:</strong>
-    <%= @product.description %>
-  </li>
-
-  <li>
-    <strong>Image:</strong>
-    <%= @product.image %>
-  </li>
-
-  <li>
-    <strong>Price:</strong>
-    <%= @product.price %>
-  </li>
-
-  <li>
-    <strong>Status:</strong>
-    <%= @product.status %>
-  </li>
-
-</ul>
-
-<%= link "Edit", to: product_path(@conn, :edit, @product) %>
-<%= link "Back", to: product_path(@conn, :index) %>
+</div>
+<!-- /product -->

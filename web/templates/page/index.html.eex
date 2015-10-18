@@ -4,8 +4,9 @@
 </div>
 
 <div class="product-list">
+
     <h2 class="product-list-h">Popular Products</h2>
-    
+
     <div class="row">
     <%= for product <- @products do %>
         <div class="col-md-4 product">
@@ -18,5 +19,7 @@
         </div>
     <% end %>
     </div>
+    <!-- /row -->
+
 </div>
 <!-- /product-list -->
